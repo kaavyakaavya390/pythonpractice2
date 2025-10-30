@@ -29,25 +29,23 @@ def main():
         tracemalloc.start()
         start = time.perf_counter()
 
-        for i in f:
-            pass
+        list2=Lines_to_List()
 
         end = time.perf_counter()
         mem1 = tracemalloc.get_traced_memory()
         tracemalloc.stop()
-        print(f"List time:{end-start:.6f}")
+        print(f"List time:{end-start:.6f} sec")
         print("List memory:", mem1[1] / 1024 / 1024, "MB")
 
         tracemalloc.start()
         start = time.perf_counter()
 
-        for i in yield_line():
-            pass
+        list3=[i for i in yield_line()]
 
         end = time.perf_counter()
         mem2 = tracemalloc.get_traced_memory()
         tracemalloc.stop()
-        print(f"yield time:{end-start:.6f}")
+        print(f"yield time:{end-start:.6f} sec")
         print("yield memory:", mem2[1] / 1024 / 1024, "MB")
 
 

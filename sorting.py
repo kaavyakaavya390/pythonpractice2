@@ -1,13 +1,7 @@
 li = [2, 5, "3", 3.4, True, "Apple", "orange", 5.67, False]
-li = sorted(li, key=str)
+li = sorted(li)
 
 print(li)
-
-for i in li:
-    if isinstance(i, int) or isinstance(i, float) or isinstance(i, bool):
-        print(ord(str(i)[0]))
-    else:
-        print(ord(i[0]))
 
 print("================================")
 
